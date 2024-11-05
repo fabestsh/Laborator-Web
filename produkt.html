@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="container">
+      <div class="prod-inp">
+        <h1
+          style="
+            font-family: 'evanston_tavern_1846light';
+            text-align: center;
+            color: white;
+          "
+        >
+          Vendos Produktin
+        </h1>
+        <input type="text" name="prod" id="produkt" placeholder="Produkti" />
+        <button onclick="addProd()">Shto</button
+        ><!--butoni therret funksionin addProd() qe shton kodin e produktit ne liste-->
+      </div>
+
+      <div class="codes">
+        <h1 id="title" style="font-size: 2rem">Kodet</h1>
+        <ul id="codelist"></ul>
+        <button onclick="clearProd()">Pastro</button
+        ><!--butoni therret funksionin clearProd() qe pastron listen nga cdo kod produkti qe ekziston si content-->
+      </div>
+    </section>
+
+    <script>
+      let prodlist = [];
+      let codelist = document.getElementById("codelist");
+
+      function addProd() {
+        let produkt = document.getElementById("produkt").value;
+        produkt = produkt.slice(-3);
+        if (produkt) {
+          prodlist.push(produkt);
+          codelist.innerHTML += `<li>${produkt}</li>`;
+          document.getElementById("produkt").value = "";
+        }
+      }
+
+      function clearProd() {
+        prodlist = [];
+        codelist.innerHTML = "";
+      }
+    </script>
+  </body>
+</html>

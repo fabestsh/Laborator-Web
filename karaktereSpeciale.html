@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title" style="font-size: 3rem">Karakteret speciale</h1>
+      <div class="prod-inp">
+        <h1
+          style="
+            font-family: 'evanston_tavern_1846light';
+            text-align: center;
+            color: white;
+          "
+        >
+          Vendos Tekstin
+        </h1>
+        <input type="text" name="tekst" id="tekst" placeholder="Teksti" />
+        <button onclick="repairText()">Confirm</button>
+        <!--Butoni therret funksionin repairText() qe heq karakteret speciale-->
+      </div>
+      <h2 id="textMosha" style="font-size: 1.5rem">
+        Teksti i ri:
+        <span id="newText" class="smText" style="font-size: 1.5rem"></span>
+      </h2>
+    </div>
+
+    <script>
+      //therritet metoda replace dhe si argumenta merr perjashtimet e karaktereve 0-9 a-z A-Z dhe cdo karakter tjeter e fshin duke perdorur ""
+      function repairText() {
+        let tekstiFillestar = document.getElementById("tekst").value;
+        tekstiFillestar = tekstiFillestar.replace(/[^a-zA-Z0-9]/g, "");
+        document.getElementById("newText").innerHTML = `${tekstiFillestar}`;
+      }
+    </script>
+  </body>
+</html>

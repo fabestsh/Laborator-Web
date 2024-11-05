@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="title">Lista me vitet</h1>
+
+      <!--Select do te perdoret per listen dhe do te permbaje eventin onchange qe behet trigger sa here zgjidhet nje option dhe therret funksionin ageCall-->
+      <!--Funksioni ageCall() merr si parameter 'this' qe ne kete rast eshte vete elementi select-->
+      <select name="vitet" id="yearlist" onchange="ageCall(this)">
+        <option value="1999">1999</option>
+        <option value="2000">2000</option>
+        <option value="2001" selected="selected">2001</option>
+        <!--atributi selected ne vleren 'selected' ben qe ky te jete option default kur hapet programi-->
+        <option value="2002">2002</option>
+        <option value="2003">2003</option>
+      </select>
+      <h2 id="textMosha">Mosha: <span id="mosha" class="smText">23</span></h2>
+      <!--Span do te kete si content vleren e moshes qe do te ndryshoje ne menyre dinamike sipas funksionit ageCall() dhe vleres se option qe perzgjedh user-->
+    </div>
+    <script>
+      //sel do te sherbeje si reference e objektit/elementit qe pret eventin, ndaj sel eshte reference e select element
+      function ageCall(sel) {
+        document.getElementById("mosha").innerHTML =
+          2024 - Number(sel.options[sel.selectedIndex].text); //logjika eshte qe nga 2024 qe eshte viti aktual, te zbritet viti i perzgjedhur nga useri dhe te shfaqet
+        // rezultati qe simbolizon moshen e userit
+        //elementi select ka options si content, te cilet bashke krijojne nje array. Ne rastin tone, na nevojitet vlera e option te selectuar qe e aksesojme me selectedIndex.
+        //Vleren ne tekst e kthejme ne numer duke perdorur NumberConstructor
+      }
+    </script>
+  </body>
+</html>

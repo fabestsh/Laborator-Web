@@ -1,0 +1,5 @@
+Krijoni nje liste qe permban disa opsione, disa vite lindjeje 1999, 2000, 2001, 2002, 2003.
+Ne ndryshim te listes me opsione, te afishohet mosha e perdoruesit ne varesi te perzgjedhjes se bere.
+
+
+Ndertoni nje funksion ne js qe shkeput kodin e nje produkti, ku doni eshte i vendosur ne 3 karakteret e fundit te fjales
